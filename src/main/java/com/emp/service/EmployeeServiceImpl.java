@@ -9,16 +9,16 @@ import org.springframework.stereotype.Service;
 import com.emp.Model.Employee;
 
 @Service
-public class EmployeeServiceImpl implements IEmployeeService{
-	
+public class EmployeeServiceImpl implements IEmployeeService {
+
 	@Autowired
 	IEmployeeRepository employeeRepository;
 
 	@Override
 	public Integer saveEmployee(Employee employee) {
 
-		Employee savedEmployee=employeeRepository.save(employee);
-		
+		Employee savedEmployee = employeeRepository.save(employee);
+
 		return savedEmployee.getId();
 	}
 
@@ -35,8 +35,13 @@ public class EmployeeServiceImpl implements IEmployeeService{
 
 	@Override
 	public void deleteEmployee(Integer id) {
-		
-	 employeeRepository.deleteById(id);
+
+		employeeRepository.deleteById(id);
+	}
+
+	@Override
+	public void deleteAllEmployee() {
+		employeeRepository.deleteAll();
 	}
 
 }

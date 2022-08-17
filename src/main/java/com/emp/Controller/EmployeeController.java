@@ -60,4 +60,11 @@ public class EmployeeController {
 		return responseEntity;
 	}
 
+	@DeleteMapping("/deleteall")
+	public void deleteAll() {
+
+		empservice.deleteAllEmployee();
+
+	}
+
 }
